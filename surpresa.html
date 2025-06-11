@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💐</text></svg>">
+  <title>Surpresa 💐</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fef6f9;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .bouquet {
+      display: none;
+      animation: fadeIn 2s forwards;
+      margin-top: 30px;
+    }
+    .bouquet img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .message {
+      font-size: 1.2em;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    button {
+      background-color: #9b59b6;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 30px;
+    }
+    button:hover {
+      background-color: #8e44ad;
+    }
+
+    .esconder {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tenho algo especial pra você...</h1>
+    <button onclick="mostrarBuque()" class="but" id="but">Clique para abrir</button>
+
+    <div class="bouquet" id="bouquet">
+      <img src="buque_tulipa.webp" alt="Buquê de Tulipas Roxas">
+      <p class="message">
+        Não consegui cumprir a promessa das flores esse mês,<br>
+        porém no próximo farei tudo ao meu alcance. <br><span class="bold">Feliz Dia dos Namorados!</span> <br><span class="bold">Te amo.</span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarBuque() {
+      
+      document.getElementById("bouquet").style.display = "block";
+      sumir(but);
+    }
+    function sumir(elemento) {
+      elemento.classList.add("esconder");
+      setTimeout(() => elemento.style.display = 'none', 500); // Esconde de vez após a transição
+    }
+  </script>
+</body>
+</html>
